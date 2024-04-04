@@ -2,8 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ProductRequest;
+use App\Http\Requests\UpdateProductRequest;
+use App\Jobs\SendProductCreatedNotification;
+use App\Notifications\ProductCreatedNotification;
 use Illuminate\Http\Request;
 use App\Models\Product;
+use Illuminate\Http\JsonResponse;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Notification;
 
 class ProductController extends Controller
 {
@@ -19,31 +27,22 @@ class ProductController extends Controller
         return response()->json($product);
     }
 
-    public function store(Request $request)
+    public function store(ProductRequest  $request)
     {
-        $request->validate([
-            'name' => 'required|min:10',
-            'article' => 'required|unique:products|regex:/^[a-zA-Z0-9]+$/',
-            // Добавьте другие правила валидации по вашему усмотрению
-        ]);
-
+        $request->validated();
         $product = Product::create($request->all());
-
+        Log::info("PRODUCTS : $product ");
+        SendProductCreatedNotification::dispatch($product);
         return response()->json($product, 201);
     }
 
-     public function update(Request $request, $id)
+    public function update(UpdateProductRequest $request, $id)
     {
-
         $product = Product::findOrFail($id);
 
-        $request->validate([
-            'name' => 'required|min:10',
-            'article' => 'required|unique:products,article,' . $id . '|regex:/^[a-zA-Z0-9]+$/',
-            // Добавьте другие правила валидации по вашему усмотрению
-        ]);
-
-        $product->update($request->all());
+        $this->authorize('update', $product);
+        $validatedData = $request->validated();
+        $product->update($validatedData);
 
         return response()->json($product);
     }

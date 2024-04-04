@@ -14,8 +14,10 @@ class ProductsTableSeeder extends Seeder
     public function run(): void
     {
         $products = [
-            ['name' => 'Яблоко', 'article' => 'P123456', 'status' => 'available', 'data' => ['color' => 'red', 'size' => 'small']],
-            ['name' => 'Телефон', 'article' => 'P654321', 'status' => 'available', 'data' => ['color' => 'blue', 'size' => 'medium']],
+            ['name' => 'Наушники Xiaomi', 'article' => 'X65404930', 'status' => 'available', 'data' => ['color' => 'black', 'size' => 'small']],
+            ['name' => 'Наушники Apple AirPods', 'article' => 'AA30681206', 'status' => 'available', 'data' => ['color' => 'white', 'size' => 'small']],
+            ['name' => 'Часы Apple Watch', 'article' => 'AW4003590', 'status' => 'unavailable', 'data' => ['color' => 'white', 'size' => 'small']],
+            ['name' => 'Часы Xiaomi', 'article' => 'XW350F59', 'status' => 'available', 'data' => ['color' => 'orange', 'size' => 'small']],
         ];
 
         foreach ($products as $product) {
