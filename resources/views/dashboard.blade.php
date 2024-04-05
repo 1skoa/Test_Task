@@ -51,8 +51,8 @@
                                 <label for="attributeValue">Значение:</label>
                             </div>
                             <div class="inputAtr">
-                                <input type="text" id="attributeName" name="attributeName" style="width: 40%; margin-right: 4%;"><br>
-                                <input type="text" id="attributeValue" name="attributeValue" style="width: 40%;"><br>
+                                <input type="text" id="attributeName1" name="attributeName" style="width: 40%; margin-right: 4%;"><br>
+                                <input type="text" id="attributeValue1" name="attributeValue" style="width: 40%;"><br>
                             </div>
                         </div>
 
