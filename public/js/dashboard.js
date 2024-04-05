@@ -74,18 +74,20 @@ document.addEventListener("DOMContentLoaded", function() {
         products.forEach(product => {
             const productElement = document.createElement('div');
             productElement.classList.add('product');
-            const dataMessage = product.data ? (product.data.color ? 'Цвет: ' + product.data.color : (product.data.size ? 'Размер: ' + product.data.size : 'Данные')) : 'Нет данных';
 
-            // Если есть цвет, заменяем "color" на "Цвет"
-            const colorMessage = product.data && product.data.color ? 'Цвет: ' + product.data.color : '';
-            const sizeMessage = product.data && product.data.size ? 'Размер: ' + product.data.size : '';
+            // Создаем строку для отображения данных из поля "data" без форматирования
+            let dataString = '';
+            for (const key in product.data) {
+                dataString += `${key}: ${product.data[key]}<br>`;
+            }
+
             const statusMessage = product.status === 'available' ? 'Доступен' : '';
             productElement.innerHTML = `
-                <p>${product.article}</p>
-                <p>${product.name}</p>
-                <p>${statusMessage}</p>
-                <p>${colorMessage}<br>${sizeMessage}</p>
-            `;
+            <p>${product.article}</p>
+            <p>${product.name}</p>
+            <p>${statusMessage}</p>
+            <p>${dataString}</p>
+        `;
             productContainer.appendChild(productElement);
         });
     }
