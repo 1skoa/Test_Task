@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="{{ asset('public/css/dashboard.css') }}">
-    <script src="{{ asset('public/js/dashboard.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('/css/dashboard.css') }}">
+    <script src="{{ asset('/js/dashboard.js') }}"></script>
 
 </head>
 <body>
