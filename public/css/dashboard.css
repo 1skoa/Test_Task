@@ -6,25 +6,25 @@ body {
     color: #e7dede;
 }
 .sidebar {
-    background-color: #374050; /* Цвет фона */
-    color: #fff; /* Цвет текста */
-    width: 250px; /* Ширина бокового меню */
-    height: 100vh; /* Высота бокового меню (по высоте экрана) */
+    background-color: #374050;
+    color: #fff;
+    width: 250px;
+    height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
     padding: 20px;
 }
 
-/* Стили для содержимого */
+
 .content {
-    display: flex; /* Располагаем дочерние элементы внутри контейнера */
+    display: flex;
     width: 100%;
-    flex-direction: column; /* Устанавливаем направление flex-контейнера на вертикальное */
-    gap: 10px; /* Отступ между колонками */
+    flex-direction: column;
+    gap: 10px;
 }
 
-/* Стили для каждой колонки */
+
 .columnName {
     height: 12%;
     align-items: flex-start;
@@ -33,7 +33,7 @@ body {
 .columnTitle {
     width: 60%;
     height: 5%;
-    background-color: #f2f6fa; /* Цвет фона */
+    background-color: #f2f6fa;
 }
 .nameData {
     position: relative;
@@ -48,10 +48,10 @@ body {
     flex-direction: column;
 }
 .nameData p {
-    margin: 0; /* Убираем внешние отступы у абзацев */
+    margin: 0;
 }
 .dataData p {
-    margin: 0; /* Убираем внешние отступы у абзацев */
+    margin: 0;
 }
 .columnData {
     width: 60%;
@@ -59,30 +59,30 @@ body {
     background-color: #ffffff;
 }
 .btn {
-    position: absolute; /* Устанавливаем абсолютное позиционирование */
-    top: 16%; /* Располагаем кнопку по вертикали по центру */
-    right: 20px; /* Отступ справа */
+    position: absolute;
+    top: 16%;
+    right: 20px;
     font-size: 17px;
-    background-color: #0fc5ff; /* Цвет фона */
-    color: #fff; /* Цвет текста */
-    padding: 15px 50px; /* Внутренние отступы */
-    border: none; /* Убираем границу */
-    border-radius: 12px; /* Закругляем углы */
-    cursor: pointer; /* Изменяем курсор при наведении */
+    background-color: #0fc5ff;
+    color: #fff;
+    padding: 15px 50px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
 }
 
 .btn:hover {
-    background-color: #0056b3; /* Изменяем цвет фона при наведении */
+    background-color: #0056b3;
 
 }
 .submitPr {
     font-size: 17px;
-    padding: 15px 50px; /* Внутренние отступы */
-    color: #fff; /* Цвет текста */
-    border-radius: 12px; /* Закругляем углы */
-    background-color: #0fc5ff; /* Цвет фона */
-    cursor: pointer; /* Изменяем курсор при наведении */
-    border: none; /* Убираем границу */
+    padding: 15px 50px;
+    color: #fff;
+    border-radius: 12px;
+    background-color: #0fc5ff;
+    cursor: pointer;
+    border: none;
     width: 20%;
 }
 input, select{
@@ -91,7 +91,7 @@ input, select{
 }
 
 .submitPr:hover {
-    background-color: #0056b3; /* Изменяем цвет фона при наведении */
+    background-color: #0056b3;
 }
 .adminName {
     position: absolute;
@@ -103,10 +103,10 @@ input, select{
 .activeText {
     position: absolute;
     font-size: 19px;
-    /* display: flex; */
+
     left: 19%;
     color: #ed1c24;
-    /* width: 7rem; */
+
     margin-top: 2%;
     font-weight: bold;
     text-transform: uppercase;
@@ -193,41 +193,101 @@ input, select{
     font-weight: bold;
 }
 .modal {
-    display: none; /* По умолчанию модальное окно скрыто */
-    position: fixed; /* Фиксированное позиционирование */
-    z-index: 1000; /* выше всех остальных элементов */
+    display: none;
+    position: fixed;
+    z-index: 1000;
     left: 0;
     top: 0;
-    width: 100%; /* Ширина равна ширине экрана */
-    height: 100%; /* Высота равна высоте экрана */
-    overflow: auto; /* Добавляем прокрутку, если содержимое модального окна не помещается на экране */
-    background-color: rgb(0, 0, 0); /* Цвет фона */
-    background-color: rgba(0, 0, 0, 0.4); /* Добавляем немного прозрачности */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* Стили для содержимого модального окна */
+
 .modal-content {
     background-color: #374050;
     margin: 5% auto;
     padding: 20px;
     border: 1px solid #888;
     width: 60%;
+    height: max-content;
+}
+.modalEdit {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+
+}
+.modal-contentEdit {
+    background-color: #374050;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    height: max-content;
+}
+.modalInfo {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+.modal-contentInfo {
+    background-color: #374050;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 60%;
+    height: max-content;
 }
 .form1 {
     display: flex;
     flex-direction: column;
 }
-/* Стили для кнопки закрытия модального окна */
-.close {
+.editForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.close, .close2{
     color: #aaaaaa;
     float: right;
     font-size: 28px;
     font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.close, .close2:hover,
+.close, .close2:focus {
     color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.closeIcon:hover,
+.closeIcon:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+.editIcon:hover,
+.editIcon:focus {
+    background: brown;
     text-decoration: none;
     cursor: pointer;
 }
@@ -235,8 +295,23 @@ input, select{
     display: flex;
     width: 75%;
 }
+.titleContainer {
+        display: flex;
+        align-items: center;
+}
+.iconContainer {
+    left: 1rem;
+    position: relative;
+}
+.editIcon, .closeIcon {
+    border: 2px solid #7c7c7c;
+}
 .titleAtr{
     display: flex;
-    width: 41%;
+    width: 42%;
     justify-content: space-between;
+}
+.deleteIcon {
+    display: flex;
+    align-items: center;
 }

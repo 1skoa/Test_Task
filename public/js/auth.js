@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const loginForm = document.querySelector('.login-form');
+    const loginForm = document.querySelector('.card_form');
 
     loginForm.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent default form submission
+        event.preventDefault();
 
         const formData = new FormData(loginForm);
-
+    console.log(formData)
         fetch('/api/auth/login', {
             method: 'POST',
             body: formData
@@ -17,10 +17,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 return response.json();
             })
             .then(data => {
-                // Save token to local storage
                 localStorage.setItem('token', data.token);
 
-                // Redirect to dashboard
                 window.location.href = '/dashboard';
             })
             .catch(error => {
