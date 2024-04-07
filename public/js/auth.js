@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch(error => {
                 console.error('There was a problem with the login:', error);
-                document.getElementById('errors').innerHTML = '<div class="alert alert-danger">There was a problem with the login. Please try again.</div>';
+				alert('Неправильный логин или пароль');
             });
     });
 });
