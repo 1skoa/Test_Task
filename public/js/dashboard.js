@@ -353,11 +353,12 @@ document.addEventListener("DOMContentLoaded", function() {
                         body: JSON.stringify(editData)
                     })
                         .then(response => {
-                            if (!response.ok) {
+                            if (response.status === 422) {
                                 return response.json().then(data => {
                                     throw new Error(data.message);
                             })
                             }
+                            return response.json();
                         })
                         .then(data => {
                             alert('Продукт успешно обновлен!');
